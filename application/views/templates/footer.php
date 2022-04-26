@@ -16,6 +16,7 @@
 
     <script src="<?php echo base_url() ?>assets/vendor/datatables/jquery.dataTables.min.js"></script>
     <script src="<?php echo base_url() ?>assets/vendor/datatables/dataTables.bootstrap4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
     <!--stepper js cdn-->
     <script src="https://cdn.jsdelivr.net/npm/bs-stepper/dist/js/bs-stepper.min.js"></script>
   <!-- Page level custom scripts -->
@@ -31,5 +32,25 @@
       stepper1Node.addEventListener('shown.bs-stepper', function (event) {
         console.warn('shown.bs-stepper', event)
       })
+      $.getJSON("https://ibnux.github.io/data-indonesia/kabupaten/33.json", function(res) {
+
+res = $.map(res, function (obj) {
+   obj.text = obj.nama
+   return obj;
+});
+
+data = [{
+   id: "",
+   nama: "- Pilih Kabupaten -",
+   text: "- Pilih Kabupaten -"
+}].concat(res);
+
+//implemen data ke select provinsi
+$("#kabupaten_kota").select2({
+   dropdownAutoWidth: true,
+   width: '100%',
+   data: data
+})
+})
 </script>
 </html>

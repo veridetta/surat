@@ -1,5 +1,4 @@
 <div class="container-fluid">
-
           <!-- Page Heading -->
           <h1 class="h3 mb-2 text-gray-800">Data Permohonan</h1>
 
@@ -192,7 +191,7 @@
                            <div class="col-md-6">
                               <div class="form-group">
                                  <label for="kota_perusahaan">Kab/Kota Perusahaan</label>
-                                 <input type="text" class="form-control" id="kabupaten_kota" name="kabupaten_kota" placeholder="Kab/Kota Perusahaan" required>
+                                 <select type="text" class="form-control select2-data-array browser-default" id="kabupaten_kota" name="kabupaten_kota" placeholder="Kab/Kota Perusahaan" required></select>
                               </div>
                            </div>
                         </div>
