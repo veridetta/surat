@@ -83,6 +83,11 @@ class Surat extends CI_Controller{
         $this->pdf->filename = "surat.pdf";
         $this->pdf->load_view('surat/pdfsurat', $data);
     }
+    public function hapusterbit($id)
+    {
+       $this->Model_surat->delete($id);
+       redirect('surat/suratterbit');
+    }
 
 }
 

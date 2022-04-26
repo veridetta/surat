@@ -9,7 +9,10 @@
               <h6 class="m-0 font-weight-bold text-primary">Data Permohonan P2K3</h6>
             </div>
             <div class="card-body">
+               <!-- jika role = pemohon dan admin, maka button tampil -->
+               <?php if ($this->session->userdata('level') == 'pemohon' || $this->session->userdata('level') == 'admin') { ?>
              <button class="btn btn-sm btn-dark mb-3" data-toggle="modal" data-target="#exampleModal">Form Permohonan</button>
+               <?php };?>
               <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                   <thead>
@@ -64,15 +67,15 @@
                        //if level = kabid, sekdis, and kadis
                        if($this->session->userdata('level')=='kabid' || $this->session->userdata('level')=='sekdis' || $this->session->userdata('level')=='kadis'){ ?>
                          <td>
-                           <a href="<?= base_url('permohonan/lihat/') . $dat['id_mohon']."key".$key; ?>"> <button type="button"><i class="fa fa-eye" style='font-size:15px;color:blue'></i></button></a>
+                           <a href="<?= base_url('permohonan/lihat/') . $dat['id_mohon']."key".$key; ?>"> <button type="button" class="btn btn-outline-primary"><i class="fa fa-eye" style='font-size:15px;color:blue'></i></button></a>
                            </td>
                          <?php } ?>
                        <?php if($this->session->userdata('level')=='admin'){ ?>
                        <td>
-                          <a href="<?= base_url('Permohonan/lihat/') . $dat['id_mohon']."key".$key; ?>" ><button type="button"><i class="fa fa-eye" style='font-size:15px;color:blue'></i></button></a> 
+                          <a href="<?= base_url('Permohonan/lihat/') . $dat['id_mohon']."key".$key; ?>" ><button type="button"  class="btn btn-outline-primary"><i class="fa fa-eye" style='font-size:15px;color:blue'></i></button></a> 
                      
                      <!-- Button trigger modal -->
-                     <button type="button" data-toggle="modal" data-target="#Modal"> <i class="fas fa-trash-alt" style='font-size:15px;color:red'></i>
+                     <button type="button"  class="btn btn-outline-danger mt-2" data-toggle="modal" data-target="#Modal"> <i class="fas fa-trash-alt" style='font-size:15px;color:red'></i>
                      	
                      </button>
 
@@ -232,7 +235,7 @@
                            <div class="col-md-6">
                               <div class="form-group">
                                  <label for="jabatan_p2k3">Jabatan</label>
-                                 <input type="text" class="form-control" id="jabatan_p2k3" name="jabatan_p2k3" placeholder="Jabatan Ketua" required>
+                                 <input type="text" class="form-control" id="jabatan_p2k3" name="jabatan_p2k3" placeholder="Jabatan SekreP2K3" required>
                               </div>
                            </div>
                         </div>
@@ -262,7 +265,7 @@
                         </div>
 
                         <button class="btn btn-primary" onclick="stepper1.next()">Next</button>
-                        <button class="btn btn-primary" onclick="stepper1.previous()">Previous</button>
+                        <button class="btn btn-warning" onclick="stepper1.previous()">Previous</button>
                      </div>
                      <div id="dokumen" class="content">
                         <!--input no surat dan nama pemilik -->
@@ -320,8 +323,8 @@
                               </div>
                            </div>
                         </div>
-                        <a class="btn btn-primary" onclick="stepper1.next()">Next</a>
-                        <a class="btn btn-primary" onclick="stepper1.previous()">Previous</a>
+                        <a class="btn btn-primary  text-white" onclick="stepper1.next()">Next</a>
+                        <a class="btn btn-warning  text-white" onclick="stepper1.previous()">Previous</a>
                      </div>
                      <div id="keanggotaan" class="content">
                         <?php 

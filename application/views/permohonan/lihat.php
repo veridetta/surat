@@ -84,10 +84,10 @@
                  <td>File Pendukung</td>
                  <td>:</td>
                  <td>
-                   <a href="<?= base_url('uploads/') . $lihat1['bpjs_k']; ?>">Sertifikat Ahli K3</a><br>
-                   <a href="<?= base_url('uploads/') . $lihat1['foto']; ?>">SKP Ahli K3</a><br>
-                   <a href="<?= base_url('uploads/') . $lihat1['skdtu']; ?>">KTK Ahli K3</a><br>
-                   <a href="<?= base_url('uploads/') . $lihat1['siuk']; ?>">SIUK</a>
+                   <a class="btn btn-outline-primary" href="<?= base_url('uploads/') . $lihat1['bpjs_k']; ?>" type="application/pdf" target="blank_"><i class="fa fa-file"></i> Ahli K3</a>
+                   <a class="btn btn-outline-secondary"  href="<?= base_url('uploads/') . $lihat1['foto']; ?>"type="application/pdf" target="blank_"><i class="fa fa-file"></i> Ahli K3</a>
+                   <a class="btn btn-outline-warning"  href="<?= base_url('uploads/') . $lihat1['skdtu']; ?>"type="application/pdf" target="blank_"><i class="fa fa-file"></i> KTK Ahli K3</a>
+                   <a class="btn btn-outline-success"  href="<?= base_url('uploads/') . $lihat1['siuk']; ?>"type="application/pdf" target="blank_"><i class="fa fa-file"></i> SIUK</a>
                  </td>
                </tr>
              </table><br>
@@ -102,29 +102,29 @@
             //if session admin adn kode =0
             if ($this->session->userdata('level') == "admin" && $lihat1['kode'] == 0){ ?>
             <div class="card-header py-3">
-               <a href="<?= base_url('Permohonan/tolak/') . $lihat1['id_mohon']; ?>" class="btn btn-primary">Tolak</a>
-               <a href="<?= base_url('Permohonan/terima/'). $lihat1['id_mohon']."keyMenungguSpasiKabid"; ?>" class="btn btn-primary" style="float: right;">Terima</a>
+               <a href="<?= base_url('Permohonan/tolak/') . $lihat1['id_mohon']; ?>" class="btn btn-danger">Tolak</a>
+               <a href="<?= base_url('Permohonan/terima/'). $lihat1['id_mohon']."keyMenungguSpasiKabidkey1"; ?>" class="btn btn-primary" style="float: right;">Terima</a>
              </div>
              <?php } ?>
              <?php
             if ($this->session->userdata('level') == "kabid" && $lihat1['status'] == "MenungguSpasiKabid"){ ?>
             <div class="card-header py-3">
-               <a href="<?= base_url('Permohonan/tolak/') . $lihat1['id_mohon']; ?>" class="btn btn-primary">Tolak</a>
-               <a href="<?= base_url('Permohonan/terima/'). $lihat1['id_mohon']."keyMenungguSpasiSekdis"; ?>" class="btn btn-primary" style="float: right;">Terima</a>
+               <a href="<?= base_url('Permohonan/tolak/') . $lihat1['id_mohon']; ?>" class="btn btn-danger">Tolak</a>
+               <a href="<?= base_url('Permohonan/terima/'). $lihat1['id_mohon']."keyMenungguSpasiSekdiskey1"; ?>" class="btn btn-primary" style="float: right;">Terima</a>
              </div>
              <?php } ?>
              <?php
             if ($this->session->userdata('level') == "sekdis" && $lihat1['status'] == "MenungguSpasiSekdis"){ ?>
             <div class="card-header py-3">
-               <a href="<?= base_url('Permohonan/tolak/') . $lihat1['id_mohon']; ?>" class="btn btn-primary">Tolak</a>
-               <a href="<?= base_url('Permohonan/terima/'). $lihat1['id_mohon']."keyMenungguSpasiKadis"; ?>" class="btn btn-primary" style="float: right;">Terima</a>
+               <a href="<?= base_url('Permohonan/tolak/') . $lihat1['id_mohon']; ?>" class="btn btn-danger">Tolak</a>
+               <a href="<?= base_url('Permohonan/terima/'). $lihat1['id_mohon']."keyMenungguSpasiKadiskey1"; ?>" class="btn btn-primary" style="float: right;">Terima</a>
              </div>
              <?php } ?>
              <?php
             if ($this->session->userdata('level') == "kadis" && $lihat1['status'] == "MenungguSpasiKadis"){ ?>
             <div class="card-header py-3">
-               <a href="<?= base_url('Permohonan/tolak/') . $lihat1['id_mohon']; ?>" class="btn btn-primary">Tolak</a>
-               <a href="<?= base_url('Permohonan/terima/'). $lihat1['id_mohon']."keyditerima"; ?>" class="btn btn-primary" style="float: right;">Terima</a>
+               <a href="<?= base_url('Permohonan/tolak/') . $lihat1['id_mohon']; ?>" class="btn btn-danger">Tolak</a>
+               <a href="<?= base_url('Permohonan/terima/'). $lihat1['id_mohon']."keyditerimakey3"; ?>" class="btn btn-primary" style="float: right;">Terima</a>
              </div>
              <?php } ?>
              

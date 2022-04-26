@@ -65,13 +65,7 @@
           <span>Surat Terbit</span></a>
       </li>
 
- <?php if($this->session->userdata('level')=='kadis'){ ?>
-      <li class="nav-item">
-        <a class="nav-link" href="<?= base_url('Surat'); ?>">
-          <i class="fas fa-fw fa-table"></i>
-          <span>Surat Permohonan</span></a>
-      </li>
-<?php } ?>
+ 
 <?php
  //if session = kabid, sekdin, dan kadis
   if($this->session->userdata('level')=='kabid' || $this->session->userdata('level')=='sekdis' || $this->session->userdata('level')=='kadis'){ ?>

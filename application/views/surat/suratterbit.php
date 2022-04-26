@@ -26,7 +26,28 @@
                       <td><?= $dat['nama_pemilik']; ?></td>
                       <td><?= $dat['nama_perusahaan']; ?></td>
                       <td><img style="width: 50px; height: 50px;" src="<?= base_url('assets/img/') . $dat['qr_code']; ?>"></td>
-                       <td><a href="<?= base_url('Surat/cetak/') . $dat['id_mohon']; ?>" class="btn btn-primary">Lihat</a></td>
+                       <td><a href="<?= base_url('Surat/cetak/') . $dat['id_mohon']; ?>" class="btn btn-primary"><i class="fa fa-eye"></i></a> <a href="#" data-toggle="modal" data-target="#Modal"" class="btn btn-danger"><i class="fa fa-trash"></i></a>
+                       <div class="modal fade" id="Modal" tabindex="-1" role="dialog"
+                     	aria-labelledby="Modal" aria-hidden="true">
+                     	<div class="modal-dialog" role="document">
+                     		<div class="modal-content">
+                     			<div class="modal-header">
+                     				<h5 class="modal-title" id="Modal">Data Permohonan</h5>
+                     				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                     					<span aria-hidden="true">&times;</span>
+                     				</button>
+                     			</div>
+                     			<div class="modal-body">
+                     				Apakah ingin menghapus data ini???
+                     			</div>
+                     			<div class="modal-footer">
+                     				<button type="button" class="btn btn-primary" data-dismiss="modal">Tidak</button>
+                                 <a href="<?= base_url('Surat/hapusterbit/') . $dat['id_surat']; ?>" class="btn btn-danger">Hapus</a>
+                     			</div>
+                     		</div>
+                     	</div>
+                     </div>
+                      </td>
                     </tr>
                   <?php endforeach; ?> 
                   </tbody>

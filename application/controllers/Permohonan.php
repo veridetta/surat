@@ -218,7 +218,7 @@ class Permohonan extends CI_Controller{
         $dat=explode("key",$id);
         $data = array(
                 'status' => $dat[1],
-                'kode' => "1"
+                'kode' => $dat[2]
         );
 
         $this->db->where('id_mohon', $dat[0]);

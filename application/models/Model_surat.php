@@ -59,6 +59,11 @@ class Model_surat extends CI_Model
       
    }
 
+   public function delete($id)
+   {
+      $this->db->delete('tb_surat', ['id_surat' => $id]);
+   }
+
 }
 
 ?>
