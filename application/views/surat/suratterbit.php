@@ -21,12 +21,18 @@
                     </tr>
                   </thead>
                   <tbody>
-                  <?php foreach ($suratterbit as $dat) : ?>
+                  <?php foreach ($suratterbit as $dat) :?>
                     <tr>
                       <td><?= $dat['nama_pemilik']; ?></td>
                       <td><?= $dat['nama_perusahaan']; ?></td>
                       <td><img style="width: 50px; height: 50px;" src="<?= base_url('assets/img/') . $dat['qr_code']; ?>"></td>
-                       <td><a href="<?= base_url('Surat/cetak/') . $dat['id_mohon']; ?>" class="btn btn-primary"><i class="fa fa-eye"></i></a> <a href="#" data-toggle="modal" data-target="#Modal"" class="btn btn-danger"><i class="fa fa-trash"></i></a>
+                       <td><a href="<?= base_url('Surat/cetak/') . $dat['id_mohon']; ?>" class="btn btn-primary"><i class="fa fa-eye"></i></a> 
+                       <?php
+                       //get session
+                        $session = $this->session->userdata('level');
+                        if ($session == 'admin') {
+                        ?>
+                       <a href="#" data-toggle="modal" data-target="#Modal"" class="btn btn-danger"><i class="fa fa-trash"></i></a>
                        <div class="modal fade" id="Modal" tabindex="-1" role="dialog"
                      	aria-labelledby="Modal" aria-hidden="true">
                      	<div class="modal-dialog" role="document">
@@ -46,6 +52,7 @@
                      			</div>
                      		</div>
                      	</div>
+                       <?php } ?>
                      </div>
                       </td>
                     </tr>

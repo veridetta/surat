@@ -26,7 +26,8 @@ SET time_zone = "+00:00";
 --
 -- Table structure for table `tb_permohonan`
 --
-
+DROP TABLE IF EXISTS `tb_permohonan` ;
+FLUSH TABLES `tb_permohonan` ; /* or exclude `tablename` to flush all tables */
 CREATE TABLE `tb_permohonan` (
   `id_mohon` int(11) NOT NULL,
   `id_user` int(11) NOT NULL,
@@ -78,7 +79,8 @@ INSERT INTO `tb_permohonan` (`id_mohon`, `id_user`, `nama_perusahaan`, `bidang_u
 --
 -- Table structure for table `tb_surat`
 --
-
+DROP TABLE IF EXISTS `tb_surat` ;
+FLUSH TABLES `tb_surat` ; 
 CREATE TABLE `tb_surat` (
   `id_surat` int(11) NOT NULL,
   `id_user` int(11) NOT NULL,
@@ -125,7 +127,8 @@ INSERT INTO `tb_surat` (`id_surat`, `id_user`, `id_mohon`, `qr_code`, `created_a
 --
 -- Table structure for table `tb_user`
 --
-
+DROP TABLE IF EXISTS `tb_user` ;
+FLUSH TABLES `tb_user` ; 
 CREATE TABLE `tb_user` (
   `id_user` int(11) NOT NULL,
   `nama_lengkap` varchar(30) NOT NULL,
